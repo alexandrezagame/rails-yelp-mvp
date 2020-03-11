@@ -1,0 +1,29 @@
+<div class="container">
+<p id="notice">
+    <%= notice %>
+</p>
+<h1>Restaurants</h1>
+<div class="custom-border-top"></div>
+<br>
+<%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-primary" %>
+<% @restaurants.each do |restaurant| %>
+<div class="card-product">
+    <img src="https://source.unsplash.com/featured/?restaurant, <%= restaurant.category %>" />
+    <div class="card-product-infos">
+        <h2>
+            <%= restaurant.name %>
+        </h2>
+        <p>
+            <%= restaurant.address %>
+            <%= restaurant.category %>
+            <%= restaurant.category %>
+        </p>
+    </div>
+    <div class="btn-all">
+        <%= link_to 'Show', restaurant, class: "btn" %>
+        <%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn" %>
+        <%= link_to 'Destroy', restaurant, class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>
+<% end %>
+</div>
